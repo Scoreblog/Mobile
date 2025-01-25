@@ -1,4 +1,4 @@
-﻿using ScoreBlog.Views;
+﻿using Scoreblog.Views;
 
 namespace ScoreBlog
 {
@@ -11,7 +11,7 @@ namespace ScoreBlog
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-           return new Window(new StartPage());
+           return new Window(new LoginPage());
         }
     }
 }

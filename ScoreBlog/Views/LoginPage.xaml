@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Scoreblog.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Login">
+    <ContentPage.Content>
+        <StackLayout Padding="16" VerticalOptions="Center">
+            <!--  Logo do app  -->
+            <Image
+                HeightRequest="170"
+                Source="logo.png"
+                WidthRequest="200" />
+
+            <!--  Campo de Email  -->
+            <Border
+                Padding="6"
+                Stroke="LightGray"
+                StrokeShape="RoundRectangle 6,6,6,6">
+                <Entry
+                    x:Name="EmailEntry"
+                    Keyboard="Email"
+                    Placeholder="Digite seu email"
+                    TextColor="LightGray" />
+            </Border>
+
+            <!--  Campo de Senha  -->
+            <Border
+                Padding="6"
+                Stroke="LightGray"
+                StrokeShape="RoundRectangle 6,6,6,6">
+                <Entry
+                    x:Name="PasswordEntry"
+                    IsPassword="True"
+                    Keyboard="Text"
+                    Placeholder="Digite sua senha"
+                    TextColor="LightGray" />
+            </Border>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
