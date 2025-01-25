@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using DotNet.Meteor.HotReload.Plugin;
+using Microsoft.Extensions.Logging;
 
 namespace ScoreBlog
 {
@@ -9,14 +10,21 @@ namespace ScoreBlog
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+#if DEBUG
+            .EnableHotReload()
+#endif
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Roboto-Regular.ttf", "RobotoRegular");
+                    fonts.AddFont("Roboto-Bold.ttf", "RobotoBold");
+                    fonts.AddFont("Roboto-ExtraBold.ttf", "RobotoExtraBold");
+                    fonts.AddFont("Roboto-Medium.ttf", "RobotoMedium");
+                    fonts.AddFont("Roboto-Semibold.ttf", "RobotoSemibold");
+                    fonts.AddFont("fontello.ttf", "IconsFont");
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

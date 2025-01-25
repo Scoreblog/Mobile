@@ -6,12 +6,20 @@ namespace ScoreBlog
     {
         public App()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.InnerException?.Message);
+                Console.WriteLine(ex.InnerException?.StackTrace);
+            }
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-           return new Window(new LoginPage());
+            return new Window(new LoginPage());
         }
     }
 }

@@ -11,5 +11,14 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+
+        <!--  Defina a fonte padrão para o aplicativo  -->
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="RobotoRegular" />
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="FontFamily" Value="RobotoRegular" />
+        </Style>
     </Application.Resources>
 </Application>
