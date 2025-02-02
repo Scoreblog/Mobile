@@ -1,5 +1,6 @@
-using Scoreblog.ViewModels;
-namespace Scoreblog.Views;
+using ScoreBlog.ViewModels;
+
+namespace ScoreBlog.Views;
 
 public partial class LoginPage : ContentPage
 {

@@ -1,7 +1,7 @@
 ﻿
-namespace Scoreblog.ViewModels
+namespace ScoreBlog.ViewModels
 {
-    class LoginViewModel
+    public class LoginViewModel
     {
     }
 }

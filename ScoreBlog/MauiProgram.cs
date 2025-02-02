@@ -26,7 +26,7 @@ namespace ScoreBlog
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
-
+            DependencyInjectionConfig.RegisterDependencies(builder.Services);
             return builder.Build();
         }
     }
