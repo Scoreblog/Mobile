@@ -5,13 +5,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Login">
     <ContentPage.Content>
-        <StackLayout Padding="16" VerticalOptions="Center">
+        <StackLayout Padding="16"
+                     VerticalOptions="Center">
             <!--  Logo do app  -->
             <Image
                 Margin="0,0,0,80"
                 HeightRequest="170"
                 Source="logo.png"
-                WidthRequest="200" />
+                WidthRequest="200"/>
 
             <!--  Campo de Email  -->
             <Border
@@ -19,20 +20,22 @@
                 Padding="4"
                 Stroke="#D2D3D4"
                 StrokeShape="RoundRectangle 6,6,6,6">
-                <StackLayout Orientation="Horizontal" Spacing="10">
+                <StackLayout Orientation="Horizontal"
+                             Spacing="10">
                     <Image
                         Margin="12,0,0,0"
                         Source="{FontImage &#xE800;,
                                            FontFamily=IconsFont,
                                            Size=18,
                                            Color=#D2D3D4}"
-                        VerticalOptions="Center" />
+                        VerticalOptions="Center"/>
                     <Entry
                         x:Name="EmailEntry"
                         FontSize="14"
                         Keyboard="Email"
                         Placeholder="Digite seu email"
-                        TextColor="#D2D3D4" />
+                        TextColor="#D2D3D4"
+                        Text="{Binding Email}"/>
                 </StackLayout>
             </Border>
 
@@ -41,7 +44,8 @@
                 Padding="4"
                 Stroke="#D2D3D4"
                 StrokeShape="RoundRectangle 6,6,6,6">
-                <StackLayout Orientation="Horizontal" Spacing="10">
+                <StackLayout Orientation="Horizontal"
+                             Spacing="10">
                     <Image
                         Margin="12,0,0,0"
                         HeightRequest="20"
@@ -50,14 +54,15 @@
                                            Size=18,
                                            Color=#D2D3D4}"
                         VerticalOptions="Center"
-                        WidthRequest="20" />
+                        WidthRequest="20"/>
                     <Entry
                         x:Name="PasswordEntry"
                         FontSize="14"
                         IsPassword="True"
                         Keyboard="Text"
                         Placeholder="Digite sua senha"
-                        TextColor="#D2D3D4" />
+                        TextColor="#D2D3D4"
+                        Text="{Binding Password}"/>
                 </StackLayout>
             </Border>
             <Label
@@ -65,7 +70,7 @@
                 HorizontalOptions="End"
                 Text="Esqueceu a senha?"
                 TextColor="#F75105"
-                VerticalOptions="Center" />
+                VerticalOptions="Center"/>
             <Button
                 BackgroundColor="#F75105"
                 CornerRadius="6"
@@ -73,7 +78,8 @@
                 FontSize="24"
                 HeightRequest="54"
                 Text="Entrar"
-                TextColor="White" />
+                TextColor="White"
+                Command="{Binding LoginCommand}"/>
 
             <Label
                 Margin="0,100,0,0"
@@ -81,7 +87,7 @@
                 HorizontalOptions="Center"
                 Text="Ainda não tem uma conta?"
                 TextColor="White"
-                VerticalOptions="Center" />
+                VerticalOptions="Center"/>
             <Label
                 Margin="0,0,0,0"
                 FontFamily="RobotoMedium"
@@ -89,7 +95,11 @@
                 HorizontalOptions="Center"
                 Text="Crie uma conta agora!"
                 TextColor="#F75105"
-                VerticalOptions="Center" />
+                VerticalOptions="Center"/>
+
+            <Label Text="{Binding ErrorMessage}"
+                   TextColor="Red"
+                   IsVisible="{Binding ErrorMessage, Converter={StaticResource NullToBoolConverter}}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

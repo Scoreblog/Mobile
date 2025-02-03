@@ -1,16 +1,14 @@
 
 using ScoreBlog.Models;
+using ScoreBlog.Services;
 
 namespace ScoreBlog;
-
-internal class LoginService : ILoginService
+public class LoginService(IHttpClientFactory httpClientFactory) : ApiService(httpClientFactory), ILoginService
 {
-    private readonly IApiService _apiService;
-    public LoginService(IApiService apiService) => _apiService = apiService;
     public Task<LoginResponse> Login(string email, string password, CancellationToken cancellationToken)
     {
         LoginRequest loginRequest = new LoginRequest(email, password);
-        return _apiService.PostAsync<LoginResponse>("/login", loginRequest, cancellationToken);
+        return PostAsync<LoginResponse>("/login", loginRequest, cancellationToken);
     }
 }
 

@@ -22,11 +22,10 @@ namespace ScoreBlog
                     fonts.AddFont("Roboto-Semibold.ttf", "RobotoSemibold");
                     fonts.AddFont("fontello.ttf", "IconsFont");
                 });
-
+            DependencyInjectionConfig.RegisterDependencies(builder.Services);
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
-            DependencyInjectionConfig.RegisterDependencies(builder.Services);
             return builder.Build();
         }
     }

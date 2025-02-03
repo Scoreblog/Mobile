@@ -3,7 +3,7 @@ using System.Net.Http.Json;
 
 namespace ScoreBlog.Services
 {
-    internal class ApiService : IApiService
+    public class ApiService : IApiService
     {
         private const string BaseUrl = "http://147.93.35.102:5070/v1";
         private readonly IHttpClientFactory _httpClientFactory;

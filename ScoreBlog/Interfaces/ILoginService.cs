@@ -1,6 +1,6 @@
 namespace ScoreBlog;
 
-internal interface ILoginService
+public interface ILoginService : IApiService
 {
     Task<LoginResponse> Login(string email, string password, CancellationToken cancellationToken);
 }

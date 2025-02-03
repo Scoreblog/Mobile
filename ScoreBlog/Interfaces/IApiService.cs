@@ -1,6 +1,6 @@
 namespace ScoreBlog;
 
-internal interface IApiService
+public interface IApiService
 {
     Task<T> PostAsync<T>(string endPoint,object data, CancellationToken cancellationToken);
 }

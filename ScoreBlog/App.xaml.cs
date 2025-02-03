@@ -1,25 +1,30 @@
-﻿using Scoreblog.Views;
+﻿using System.Diagnostics;
+using ScoreBlog.Views;
 
 namespace ScoreBlog
 {
     public partial class App : Application
     {
-        public App()
+        private readonly IServiceProvider _serviceProvider;
+
+        public App(IServiceProvider serviceProvider)
         {
-            try
-            {
-                InitializeComponent();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.InnerException?.Message);
-                Console.WriteLine(ex.InnerException?.StackTrace);
-            }
+            InitializeComponent();
+            _serviceProvider = serviceProvider;
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new LoginPage());
+            try
+            {
+                var loginPage = _serviceProvider.GetRequiredService<LoginPage>();
+                return new Window(loginPage);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erro ao criar a janela com LoginPage: {ex.Message}");
+                throw;
+            }
         }
     }
 }

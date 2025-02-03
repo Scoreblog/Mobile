@@ -1,4 +1,4 @@
 ﻿namespace ScoreBlog.Models
 {
-    internal record LoginRequest(string email, string password);
+    public record LoginRequest(string email, string password);
 }
