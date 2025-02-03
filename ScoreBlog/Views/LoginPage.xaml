@@ -96,10 +96,6 @@
                 Text="Crie uma conta agora!"
                 TextColor="#F75105"
                 VerticalOptions="Center"/>
-
-            <Label Text="{Binding ErrorMessage}"
-                   TextColor="Red"
-                   IsVisible="{Binding ErrorMessage, Converter={StaticResource NullToBoolConverter}}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

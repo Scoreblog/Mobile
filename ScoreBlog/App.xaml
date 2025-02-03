@@ -4,21 +4,22 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ScoreBlog">
+    
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <!-- Estilos movidos para dentro do ResourceDictionary -->
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="RobotoRegular" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily" Value="RobotoRegular" />
+            </Style>
         </ResourceDictionary>
-
-        <!--  Defina a fonte padrão para o aplicativo  -->
-        <Style TargetType="Label">
-            <Setter Property="FontFamily" Value="RobotoRegular" />
-        </Style>
-
-        <Style TargetType="Entry">
-            <Setter Property="FontFamily" Value="RobotoRegular" />
-        </Style>
     </Application.Resources>
 </Application>

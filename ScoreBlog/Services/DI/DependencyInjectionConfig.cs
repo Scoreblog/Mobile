@@ -8,10 +8,10 @@ public static class DependencyInjectionConfig
 {
     public static void RegisterDependencies(IServiceCollection services)
     {
-        services.AddSingleton<IApiService, ApiService>();
-        services.AddSingleton<ILoginService, LoginService>();
-        services.AddSingleton<LoginViewModel>();
-        services.AddSingleton<LoginPage>();
+        services.AddTransient<IApiService, ApiService>();
+        services.AddTransient<ILoginService, LoginService>();
+        services.AddTransient<LoginViewModel>();
+        services.AddTransient<LoginPage>();
         services.AddHttpClient();
     }
 }
